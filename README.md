@@ -4,7 +4,7 @@
 2. Run **npm install**
 3. Run **npm start**
 
-A look to Robo Friends App, Go Checkout the Website with the link provided in ***below***
+A look to Robo Friends App, Go Checkout the Website with the link provided ***below:***
 
 https://zaynalishan.github.io/robofriends/
 
