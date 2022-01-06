@@ -3,6 +3,7 @@ import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
 import './App.css'
 import Scroll from '../components/Scroll'
+import ErrorBoundry from '../components/ErrorBoundry'
 
 class App extends React.Component {
 //making state.. A state turns is passed by parent to child as a state and when
@@ -38,7 +39,7 @@ onSearchChange = (event) => {
 	})
 	//check for if no robots found, if no check appiled then fetching will keep on waiting
 		if(robots.length === 0) {
-			return <h1 className='tc heading'>Loading...</h1>
+			return <h1 className='tc heading f1'>Loading...</h1>
 		}
 		else
 		{
@@ -47,7 +48,9 @@ onSearchChange = (event) => {
 					<h1 className = 'f1 heading'>Robo Friends</h1>
 					<SearchBox searchChange = {this.onSearchChange}/>
 					<Scroll>
+						<ErrorBoundry>
 						<CardList robots = {filteredRobots}/> {/*robots here are passed as props*/}
+						</ErrorBoundry>
 					</Scroll>	
 				</div>
 			);
